@@ -3030,8 +3030,8 @@ redis_build_eval_cmd(RedisSock *redis_sock, char **ret, char *keyword,
 {
     zval *elem;
     HashTable *args_hash;
-    int cmd_len, args_count = 0;
-    int eval_cmd_count = 2;
+    size_t cmd_len;
+    int eval_cmd_count = 2, args_count = 0;
 
     // If we've been provided arguments, we'll want to include those in our eval 
     // command
